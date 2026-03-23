@@ -58,11 +58,25 @@
 
   /* ABOUT */
   #about{background:var(--bg);}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:center;}
-  .about-img-col{border-radius:20px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.15);}
-  .about-fridge-img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/4;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;align-items:stretch;}
+  .about-img-col{border-radius:20px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.15);position:relative;}
+  .about-fridge-img{width:100%;height:100%;object-fit:cover;display:block;}
+  .about-text{display:flex;flex-direction:column;justify-content:center;}
   .about-text p{font-size:0.97rem;color:var(--text-muted);line-height:2;margin-bottom:14px;}
   .about-text strong{color:var(--orange);}
+
+  @media (min-width: 901px) {
+    .about-fridge-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  @media (max-width: 900px) {
+    .about-fridge-img {
+      aspect-ratio: 4/3;
+    }
+  }
 
   /* SYSTEM */
   #system{background:#fff;}
